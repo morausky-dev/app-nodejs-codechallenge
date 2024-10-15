@@ -1,0 +1,1 @@
+export const GREATER_VALUE_TO_REJECT: number = 1000

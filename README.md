@@ -23,6 +23,8 @@ Every transaction with a value greater than 1000 should be rejected.
 
 ```mermaid
   flowchart LR
+    Apigateway --Send transaction to store event--> Transaction
+    Apigateway --Get transaction event--> Transaction
     Transaction -- Save Transaction with pending Status --> transactionDatabase[(Database)]
     Transaction --Send transaction Created event--> Anti-Fraud
     Anti-Fraud -- Send transaction Status Approved event--> Transaction
@@ -80,3 +82,11 @@ You can use Graphql;
 When you finish your challenge, after forking a repository, you **must** open a pull request to our repository. There are no limitations to the implementation, you can follow the programming paradigm, modularization, and style that you feel is the most appropriate solution.
 
 If you have any questions, please let us know.
+
+
+#Migrate Prisma database
+
+
+```
+npx prisma migrate dev
+```
